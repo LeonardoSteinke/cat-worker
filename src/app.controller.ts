@@ -5,8 +5,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Get('/sendCats')
-  async sendCats(@Body() body: any) {
-    return this.appService.sendCats(body.name);
+  @Get('/ping')
+  async ping() {
+    return this.appService.ping();
   }
 }
