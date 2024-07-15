@@ -1,11 +1,10 @@
-import { Inject, Injectable } from '@nestjs/common'
-import { ClientProxy, RmqRecordBuilder } from '@nestjs/microservices';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
   constructor() { }
 
   ping() {
-    return { message: 'pong' }
+    return { message: 'pong' };
   }
 }

@@ -5,23 +5,23 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-    imports: [
-        ConfigModule.forRoot(),
-        ClientsModule.register([
-            {
-                name: 'CATS_SERVICE',
-                transport: Transport.RMQ,
-                options: {
-                    urls: [process.env.RABBIT_URL],
-                    queue: process.env.RABBIT_QUEUE,
-                    queueOptions: {
-                        durable: true,
-                    },
-                },
-            },
-        ])
-    ],
-    controllers: [ProducerController],
-    providers: [ProducerService],
+  imports: [
+    ConfigModule.forRoot(),
+    ClientsModule.register([
+      {
+        name: 'CATS_SERVICE',
+        transport: Transport.RMQ,
+        options: {
+          urls: [process.env.RABBIT_URL],
+          queue: process.env.RABBIT_QUEUE,
+          queueOptions: {
+            durable: true,
+          },
+        },
+      },
+    ]),
+  ],
+  controllers: [ProducerController],
+  providers: [ProducerService],
 })
 export class ProducerModule { }

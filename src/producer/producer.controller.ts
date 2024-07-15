@@ -3,7 +3,7 @@ import { ProducerService } from './producer.service';
 
 @Controller()
 export class ProducerController {
-  constructor(private readonly producerService: ProducerService) {}
+  constructor(private readonly producerService: ProducerService) { }
 
   @Post('/sendCats')
   async sendCats(@Body() body: any) {
