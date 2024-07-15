@@ -1,8 +1,8 @@
 {
   "name": "cat-worker",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "author": "Leonardo Tadeu Jaques Steinke",
+  "description": "Worker for publish and consume messages from RabbitMQ",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
