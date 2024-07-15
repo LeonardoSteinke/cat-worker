@@ -13,7 +13,7 @@ import { ConfigModule } from '@nestjs/config';
                 transport: Transport.RMQ,
                 options: {
                     urls: [process.env.RABBIT_URL],
-                    queue: process.env.RABBIT_QUEUE+'123',
+                    queue: process.env.RABBIT_QUEUE,
                     queueOptions: {
                         durable: true,
                     },
