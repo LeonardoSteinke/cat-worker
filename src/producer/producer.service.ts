@@ -1,9 +1,14 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ClientProxy, RmqRecordBuilder } from '@nestjs/microservices';
 
 @Injectable()
-export class ProducerService {
+export class ProducerService implements OnModuleInit{
     constructor(@Inject('CATS_SERVICE') private client: ClientProxy) { }
+
+    // Quando o modulo é criado é realizado a chamada dessa função
+    onModuleInit() {
+        this.sendCats('Luffy')
+    }
 
     async sendCats(name: string) {
         try {

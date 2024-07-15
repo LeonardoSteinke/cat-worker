@@ -19,9 +19,9 @@ async function bootstrap() {
   })
 
   //Instanciando module para chamada de funções quando inicia a aplicação
-  const producerService = app.select(AppModule).get(ProducerService)
+  // const producerService = app.select(AppModule).get(ProducerService)
 
   await app.startAllMicroservices() 
-  // await app.listen(3000)
+  await app.listen(3000)
 }
 bootstrap();
