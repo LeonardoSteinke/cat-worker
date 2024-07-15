@@ -7,11 +7,8 @@ export class ProducerService {
 
     async sendCats(name: string) {
         try {
-            this.client.emit('send_cats',
-                {
-                    catName: name,
-                }
-            )
+            this.client.emit('send_cat', { name: name })
+
             return {
                 message: 'Cat sent',
             }
